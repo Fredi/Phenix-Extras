@@ -1,0 +1,6 @@
+CREATE TABLE `posts` (
+`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`title` VARCHAR( 150 ) NOT NULL ,
+`text` TEXT NOT NULL ,
+`author` VARCHAR( 50 ) NOT NULL
+);

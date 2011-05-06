@@ -1,0 +1,15 @@
+<h1>Post List</h1>
+
+<p><a href="/posts/new">Add Post</a></p>
+
+<?php foreach ($posts as $post) { ?>
+
+<p>
+<strong>Title:</strong> <?php echo $post->title ?><br />
+<strong>Author:</strong> <?php echo $post->author ?><br />
+<a href="/posts/<?php echo $post->id ?>">Show</a> | 
+<a href="/posts/<?php echo $post->id ?>/edit">Edit</a> | 
+<a href="/posts/<?php echo $post->id ?>" data-method="delete" data-confirm="Are you sure?">Destroy</a>
+</p>
+
+<?php } ?>

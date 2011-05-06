@@ -1,0 +1,8 @@
+<?php if (isset($post) && $post->errors()) { ?>
+<p>Please check the following field(s):</p>
+<ul>
+	<?php foreach ($post->fields_with_errors() as $field => $message ) { ?>
+	<li><?php echo $field.": ".$message ?></li>
+	<?php } ?>
+</ul>
+<?php } ?>

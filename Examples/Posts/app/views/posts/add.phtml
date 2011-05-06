@@ -1,0 +1,30 @@
+<h1>Add Post</h1>
+
+<?php $this->render_partial('errors') ?>
+
+<form method="post" action="/posts">
+
+	<p>
+		<label>
+			Title:<br />
+			<input type="text" name="posts[title]" value="<?php echo @$post->title ?>" />
+		</label>
+	</p>
+	<p>
+		<label>
+			Text:<br />
+			<textarea name="posts[text]" cols="30" rows="5"><?php echo @$post->text ?></textarea>
+		</label>
+	</p>
+	<p>
+		<label>
+			Author:<br />
+			<input type="text" name="posts[author]" value="<?php echo @$post->author ?>" />
+		</label>
+	</p>
+
+	<p><button type="submit">Add Post</button></p>
+
+</form>
+
+<a href="/posts">Back</a>

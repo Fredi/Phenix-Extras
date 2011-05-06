@@ -1,0 +1,18 @@
+<h1>Post #<?php echo $post->id ?></h1>
+
+<p>
+	<strong>Title:</strong><br />
+	<?php echo $post->title ?>
+</p>
+<p>
+	<strong>Text:</strong><br />
+	<?php echo nl2br($post->text) ?>
+</p>
+<p>
+	<strong>Author:</strong><br />
+	<?php echo $post->author ?>
+</p>
+
+<a href="/posts/<?php echo $post->id ?>/edit">Edit</a> | 
+<a href="/posts">Back</a>
+
