@@ -44,9 +44,9 @@ class PostsController extends ApplicationController
 		// fields with the data sent within the POST request
 		$post = Posts::create($this->params['posts']);
 
-		// If the save() method return true then we redirect to
+		// If the save() method returns true then we redirect to
 		// the post 'show' page setting a flash message
-		if ($post->save() === true)
+		if ($post->save())
 			$this->redirect('/posts/'.$post->id, 'Post was successfully created.');
 		// On fail we get an instance of the Posts model with the data
 		// our user tried to save, so we want to render the 'add' view 
@@ -64,9 +64,9 @@ class PostsController extends ApplicationController
 		// on the 'id' parameter from the route
 		if ($post = Posts::find_one($params['id']))
 		{
-			// If the save() method return true then we redirect to
+			// If the save() method returns true then we redirect to
 			// the post 'show' page and set a flash message
-			if ($post->save($this->params['posts']) === true)
+			if ($post->save($this->params['posts']))
 				$this->redirect('/posts/'.$post->id, 'Post successfully updated.');
 			// On fail we get an instance of the Posts model with the data
 			// our user tried to update, so we want to render the 'edit' view 
@@ -96,6 +96,6 @@ class PostsController extends ApplicationController
 		// The post doesn't exist we redirect to the post listing
 		// setting a flash message
 		else
-			$this->redirect('/posts', "The post you tried to update doesn't exist.");
+			$this->redirect('/posts', "The post you tried to delete doesn't exist.");
 	}
 }
