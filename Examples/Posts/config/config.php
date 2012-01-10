@@ -1,7 +1,7 @@
 <?php
 // Configuration
 
-$config = array(
+Config::set(array(
 	'database' => array(
 		'dsn' => 'mysql:host=localhost;dbname=database',
 		'username' => 'root',
@@ -12,4 +12,4 @@ $config = array(
 	'log_class' => null,
 	'log_path' => '../log',
 	'log_level' => 4,
-);
+));
